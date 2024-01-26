@@ -1,16 +1,14 @@
-//import React from "react";
+import React from "react";
 
 function FoodBox(props) {
+  function deleteFood(foodId) {
+    // const foodsAfterDelete = [...props.foods] it does not work this way!!
+    const foodsAfterDelete = props.foods.filter((food) => {
+      return food.id !== foodId;
+    });
 
-    function deleteFood(foodId) {
-       // const foodsAfterDelete = [...props.foods] it does not work this way!!
-        const foodsAfterDelete = props.foods.filter((food) => {
-            return food.id !== foodId
-        })
-        
-        props.setFoods(foodsAfterDelete)
-
-    }
+    props.setFoods(foodsAfterDelete);
+  }
 
   return (
     <div>
